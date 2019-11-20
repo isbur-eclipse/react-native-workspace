@@ -1,0 +1,48 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: react-native-workspace
+  namespace: workspace-creator
+  selfLink: >-
+    /apis/build.openshift.io/v1/namespaces/workspace-creator/buildconfigs/react-native-workspace
+  uid: 40866573-0b08-11ea-bcdd-0a580a8000e4
+  resourceVersion: '17320430'
+  creationTimestamp: '2019-11-19T20:07:45Z'
+spec:
+  nodeSelector: null
+  output:
+    to:
+      kind: DockerImage
+      name: 'docker.io/isbur/react-native-workspace:latest'
+    pushSecret:
+      name: dockerhub.pushsecret
+  resources:
+    limits:
+      cpu: '2'
+      memory: 1Gi
+  successfulBuildsHistoryLimit: 5
+  failedBuildsHistoryLimit: 5
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: DockerImage
+        name: 'quay.io/eclipse/che-nodejs10-ubi:nightly'
+      env:
+        - name: BUILD_LOGLEVEL
+          value: '5'
+  postCommit: {}
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/isbur/react-native-workspace.git'
+      ref: master
+  triggers:
+    - type: ConfigChange
+    - type: GitHub
+      github:
+        secretReference:
+          name: github.react-native-workspace.secret
+  runPolicy: Serial
+status:
+  lastVersion: 22
