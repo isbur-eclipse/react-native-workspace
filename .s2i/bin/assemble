@@ -9,8 +9,9 @@ echo "NPM_PACKAGES=\"${HOME}/.npm-packages\"" >> "${HOME}/.bashrc"
 echo "export PATH=\"$PATH:$NPM_PACKAGES/bin\"" >> "${HOME}/.bashrc"
 echo "export MANPATH=\"${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man\"" >> "${HOME}/.bashrc"
 
+echo "npm setting set, continue to install expo-cli"
 
-npm install --global expo-cli
+npm install --global --no-optional --verbose expo-cli
 
 
 git config --global credential.helper store
