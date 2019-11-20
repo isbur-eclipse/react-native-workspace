@@ -1,6 +1,7 @@
 export HOME=/home/user
 mkdir "${HOME}/.npm-packages"
 npm config set prefix "${HOME}/.npm-packages"
+yarn config set cache-folder /dev/null
 
 
 echo "Installing some prerequisites"
