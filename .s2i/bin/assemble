@@ -12,6 +12,7 @@ echo "export MANPATH=\"${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man\"" >> "${HO
 echo "npm setting set, continue to install expo-cli"
 
 npm install --global --no-optional --verbose --production expo-cli
+npm cache clean --force
 
 find /home/user -exec fix-permissions {} \;
 
