@@ -11,7 +11,7 @@ echo "export MANPATH=\"${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man\"" >> "${HO
 
 echo "npm setting set, continue to install expo-cli"
 
-npm install --global --no-optional --verbose expo-cli
+npm install --global --no-optional --verbose --production expo-cli
 
 
 git config --global credential.helper store
