@@ -10,7 +10,7 @@ echo "export PATH=\"$PATH:$NPM_PACKAGES/bin\"" >> "${HOME}/.bashrc"
 echo "export MANPATH=\"${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man\"" >> "${HOME}/.bashrc"
 
 npm install --global yarn
-yarn global add expo-cli
+yarn global add expo-cli --verbose
 
 
 git config --global credential.helper store
