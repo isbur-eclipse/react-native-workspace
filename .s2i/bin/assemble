@@ -2,4 +2,15 @@ HOME = /home/user
 mkdir "${HOME}/.npm-packages"
 npm config set prefix "${HOME}/.npm-packages"
 
+
+echo "Installing some prerequisites"
+
+echo "NPM_PACKAGES=\"${HOME}/.npm-packages\"" >> "${HOME}/.bashrc"
+echo "export PATH=\"$PATH:$NPM_PACKAGES/bin\"" >> "${HOME}/.bashrc"
+echo "export MANPATH=\"${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man\"" >> "${HOME}/.bashrc"
+
+npm install --global yarn
+yarn global add expo-cli
+
+
 git config --global credential.helper store

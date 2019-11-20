@@ -1,6 +1,3 @@
-HOME = /home/user
-echo "NPM_PACKAGES=\"${HOME}/.npm-packages\"" >> "${HOME}/.bashrc"
-echo "export PATH=\"$PATH:$NPM_PACKAGES/bin\"" >> "${HOME}/.bashrc"
-echo "export MANPATH=\"${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man\"" >> "${HOME}/.bashrc"
+
 
 tail -f /dev/null
