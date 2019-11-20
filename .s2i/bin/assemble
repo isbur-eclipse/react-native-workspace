@@ -9,14 +9,8 @@ echo "NPM_PACKAGES=\"${HOME}/.npm-packages\"" >> "${HOME}/.bashrc"
 echo "export PATH=\"$PATH:$NPM_PACKAGES/bin\"" >> "${HOME}/.bashrc"
 echo "export MANPATH=\"${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man\"" >> "${HOME}/.bashrc"
 
-npm install --global yarn
 
-
-
-yarn config set cache-folder /dev/null
-yarn config list
-yarn global add expo-cli --verbose
-
+npm install --global expo-cli
 
 
 git config --global credential.helper store
