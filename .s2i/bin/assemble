@@ -13,5 +13,7 @@ echo "npm setting set, continue to install expo-cli"
 
 npm install --global --no-optional --verbose --production expo-cli
 
+find /home/user -exec fix-permissions {} \;
+
 
 git config --global credential.helper store
